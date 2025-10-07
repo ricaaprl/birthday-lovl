@@ -1,0 +1,181 @@
+/* Universal and Body Styles */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    scroll-behavior: smooth; 
+}
+
+body {
+    /* Note: 'Henny Penny' was in the original font-family but not imported. 
+       I've kept a generic fallback for 'Fontdiner Swanky' which is imported. */
+    font-family: 'Quicksand', sans-serif; 
+    color: #ccc2c2;
+    text-align: center;
+    /* Note: You'll need the background image file: foto dunia.jpg */
+    background: url("foto dunia.jpg"), 
+                linear-gradient(135deg, #e73c80, #cc0066, #ff3399);
+    background-size: 120px 120px, cover;
+}
+
+/* Navbar Styles */
+nav {
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    background: rgba(255, 93, 158, 0.9);
+    /* backdrop-filter: blur(5%); - Percentage is invalid, changed to a pixel value */
+    backdrop-filter: blur(5px);
+    padding: 12px 0;
+    z-index: 1000;
+    border-bottom: 2px solid #ff66b3;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.7rem;
+    transition: 0.3s;
+}
+
+nav a:hover { 
+    color: #ffe6f2; 
+}
+
+/* Section Styles */
+section {
+    min-height: 100vh;
+    padding: 120px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.062);
+    margin: 20px;
+    border-radius: 25px;
+    animation: fadeInUp 1.5s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    0% { 
+        opacity: 0; 
+        transform: translateY(50px); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Heading Styles */
+h1 {
+    font-family: 'Fontdiner Swanky', cursive;
+    font-size: 5rem;
+    color: #c8c8c8;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(255, 53, 151, 0.722);
+}
+
+h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: #d15090;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.722);
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    max-width: 950px;
+    line-height: 1.6;
+    color: #fff0f5;
+    /* Corrected a syntax issue in the original text-shadow */
+    text-shadow: 2px 2px 5px rgba(204, 70, 137, 0.722); 
+}
+
+/* Button Styles */
+.btn {
+    background: linear-gradient(135deg, #ff4da6, #ff1a75);
+    color: #fff; 
+    padding: 12px 28px;
+    margin: 8px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255,77,166,0.4);
+    font-family: 'Quicksand', sans-serif;
+}
+
+.btn:hover { 
+    background: linear-gradient(135deg, #ff1a75, #ff4da6);
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(255,0,102,0.6);
+}
+
+/* Image Styles */
+img {
+    border-radius: 25px;
+    margin: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.4s;
+}
+
+img:hover { 
+    transform: scale(1.05) rotate(1deg); 
+}
+
+/* Gallery Grid Styles */
+.grid-foto {
+    display: grid;
+    /* Changed to 2 columns for better responsiveness on larger screens */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    max-width: 1000px; /* Constraint the grid size */
+    padding: 10px;
+}
+
+.grid-foto img {
+    width: 100%; 
+    height: auto;
+    object-fit: cover;
+}
+
+/* Media Queries for better responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .grid-foto {
+        /* Stack images on smaller screens */
+        grid-template-columns: 1fr; 
+    }
+    
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+/* Footer Styles */
+footer {
+    padding: 20px;
+    font-family: 'Quicksand', sans-serif;
+    color: #ffcce0;
+    background-color: rgba(255, 93, 158, 0.7);
+}
